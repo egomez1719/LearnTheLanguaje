@@ -1,5 +1,5 @@
 Compiling Program: C:\DataFlex Projects\LearnTheLanguage\AppSrc\OtrasPruebas.src
-Memory Available: 945631231
+Memory Available: 1063043071
 1>Use DFAllEnt.pkg
 Using pre-compiled package DFALLENT.PKG
 Including file: dfallent.pkd    (C:\Program Files (x86)\DataFlex 19.1\Pkg\dfallent.pkd)
@@ -4585,57 +4585,51 @@ Including file: cWinControl.pkg    (C:\Program Files (x86)\DataFlex 19.1\Pkg\cWi
 70489>>>    
 70489>>>        // fires when the button is clicked
 70489>>>        Procedure OnClick
-70492>>>            Find ge PERSONAS by 1
-70493>>>>
-70493>>>            If (Found) Begin
-70495>>>                Reread PERSONAS
-70499>>>                Move sClave to PERSONAS.CLAVE
-70500>>>                SaveRecord PERSONAS
-70501>>>                Unlock
-70502>>>>
-70502>>>            End
-70502>>>>
+70492>>>//            Find ge PERSONAS by 1
+70492>>>//            If (Found) Begin
+70492>>>//                Reread PERSONAS
+70492>>>//                Move sClave to PERSONAS.CLAVE
+70492>>>//                SaveRecord PERSONAS
+70492>>>//                Unlock
+70492>>>//            End         
+70492>>>        End_Procedure
+70493>>>    
+70493>>>    End_Object
+70494>>>    Object oBoton_Borrar is a Button
+70496>>>        Set Location to 85 288
+70497>>>        Set Label to "Borrar"
+70498>>>        Set psImage to "ActionDelete.ico"
+70499>>>        
+70499>>>        // fires when the button is clicked
+70499>>>        Procedure OnClick
 70502>>>            
 70502>>>            
 70502>>>        End_Procedure
 70503>>>    
 70503>>>    End_Object
-70504>>>    Object oBoton_Borrar is a Button
-70506>>>        Set Location to 85 288
-70507>>>        Set Label to "Borrar"
-70508>>>        Set psImage to "ActionDelete.ico"
-70509>>>        
-70509>>>        // fires when the button is clicked
-70509>>>        Procedure OnClick
-70512>>>            
-70512>>>            
-70512>>>        End_Procedure
-70513>>>    
-70513>>>    End_Object
-70514>>>    
-70514>>>
-70514>>>Cd_End_Object
-70516>>>>
-70516>
-70516>        Procedure Activate_About
-70519>            Send DoAbout "" "" "" "" ""
-70520>        End_Procedure
-70521>
-70521>    End_Object
-70522>
-70522>End_Object
-70523>
-70523>Start_UI
-70524>
+70504>>>
+70504>>>Cd_End_Object
+70506>>>>
+70506>
+70506>        Procedure Activate_About
+70509>            Send DoAbout "" "" "" "" ""
+70510>        End_Procedure
+70511>
+70511>    End_Object
+70512>
+70512>End_Object
+70513>
+70513>Start_UI
+70514>
 Summary
-Memory Available: 921616383
+Memory Available: 1040613375
 Total Warnings : 0
 Total Errors   : 0
-Total Symbols  : 41206
+Total Symbols  : 41204
 Total Resources: 0
-Total Commands : 70523
+Total Commands : 70513
 Total Windows  : 0
 Total Pages    : 0
-Static Data    : 401194
+Static Data    : 401134
 Message area   : 501882
-Total Blocks   : 25472
+Total Blocks   : 25469
