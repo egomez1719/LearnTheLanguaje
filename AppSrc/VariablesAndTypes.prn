@@ -1,0 +1,89 @@
+Compiling Program: C:\DataFlex Projects\LearnTheLanguage\AppSrc\VariablesAndTypes.src
+Memory Available: 1520369663
+1>Use DfAllEnt.pkg
+Using pre-compiled package DFALLENT.PKG
+Including file: dfallent.pkd    (C:\Program Files (x86)\DataFlex 19.1\Pkg\dfallent.pkd)
+67438>
+67438>Procedure AprenderVariables
+67440>    String sTexto
+67440>    
+67440>    Move "Hola desde variable" to sTexto
+67441>    
+67441>    Send Info_Box sTexto "Hola"
+67442>
+67442>End_Procedure
+67443>
+67443>Send AprenderVariables //Si no se coloca esta l¡nea fuera del Procedimiento no se mostrar  nada
+67444>
+67444>//Showln ' ' ' Variable sTexto: ' sTexto //La variable sTexto no se reconoce fuera del Procedimiento (ERROR)
+67444>
+67444>//---------------------------------------------------------------------------------------------------------
+67444>Procedure Multiplica
+67446>    Integer iNumero1 iNumero2
+67446>    
+67446>    Move 5 to iNumero1
+67447>    Move (iNumero1*7) to iNumero2 //El par‚ntesis es indispensable, su omisi¢n genera error
+67448>    
+67448>    Send Info_Box iNumero2 "Resultado de iNumero1 * iNumero2"
+67449>       
+67449>End_Procedure
+67450>
+67450>Send Multiplica
+67451>
+67451>//---------------------------------------------------------------------------------------------------------
+67451>
+67451>Procedure FechaDeHoy
+67453>    Date dHoy
+67453>    String sMensaje
+67453>    
+67453>    Move (CurrentDateTime()) to dHoy
+67454>    Move ("Hoy es: " + String(dHoy)) to sMensaje
+67455>    
+67455>    Send Info_Box sMensaje "Informaci¢n"
+67456>    
+67456>End_Procedure
+67457>
+67457>Send FechaDeHoy
+67458>
+67458>//---------------------------------------------------------------------------------------------------------
+67458>
+67458>Procedure MostrarDecimales //variables se deben declarar de tipo Number
+67460>    Number nNumero
+67460>    
+67460>    Move 177 to nNumero
+67461>    
+67461>    Send Info_Box ("177 / 2 es "+String(nNumero / 2)) "Con Decimales"
+67462>    
+67462>End_Procedure
+67463>
+67463>Send MostrarDecimales
+67464>
+67464>//---------------------------------------------------------------------------------------------------------
+67464>
+67464>Procedure ParImpar
+67466>    Number iNumero
+67466>    
+67466>    Move 177 to iNumero
+67467>    If ((Mod(iNumero,2)) = 0) Begin
+67469>        Send Info_Box ("El n£mero "+String(iNumero)+" es PAR") "Atenci¢n"
+67470>    End
+67470>    Else Begin
+67471>        Send Info_Box ("El n£mero "+String(iNumero)+" es IMPAR") "Atenci¢n"
+67472>    End
+67472>    
+67472>End_Procedure
+67473>
+67473>Send ParImpar
+67474>
+Summary
+Memory Available: 1503514623
+Total Warnings : 0
+Total Errors   : 0
+Total Symbols  : 39675
+Total Resources: 0
+Total Commands : 67473
+Total Windows  : 0
+Total Pages    : 0
+Static Data    : 371826
+Message area   : 476771
+Total Blocks   : 24311

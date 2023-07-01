@@ -1,0 +1,88 @@
+Compiling Program: C:\DataFlex Projects\LearnTheLanguage\AppSrc\FunctionsAndProcedures.src
+Memory Available: 1882046463
+1>Use DfAllEnt.pkg
+Using pre-compiled package DFALLENT.PKG
+Including file: dfallent.pkd    (C:\Program Files (x86)\DataFlex 19.1\Pkg\dfallent.pkd)
+67438>// Ejemplo de un Procedimiento ------------------------------------------------------------------------------
+67438>//Procedure HacerTarea Integer iNum String sMensaje
+67438>//    Send Info_Box (SFormat("Realizando el Procedimiento: %1, %2", iNum, sMensaje)) "Hola"
+67438>//End_Procedure
+67438>//
+67438>//Send HacerTarea 4 "El Mensaje"
+67438>//Send HacerTarea 17 "El otro mensaje"
+67438>
+67438>//// Ejemplo para multiplicar un n£mero por cinco enviandolo a un Procedimiento y luego a una Funci¢n-----------
+67438>//
+67438>//Function Multiplicar Integer iValor Returns Integer
+67438>//    
+67438>//    Function_Return (iValor * 5)
+67438>//    
+67438>//End_Function
+67438>//
+67438>//Procedure HacerTareaYFuncion Integer iNum String sMensaje
+67438>//    Get Multiplicar iNum to iNum
+67438>//    
+67438>//    Send Info_Box (SFormat("Realizando el Procedimiento: %1, %2", iNum, sMensaje)) "Hola"
+67438>//
+67438>//End_Procedure
+67438>//
+67438>//Send HacerTareaYFuncion 4 "El Mensaje"
+67438>//Send HacerTareaYFuncion 17 "El otro mensaje"
+67438>
+67438>// Agregando otro procedimiento para convertir el mensaje a may£sculas ----------------------------------------
+67438>
+67438>Function Multiplicar Integer iValor Returns Integer                                       
+67440>                                                                                          
+67440>    Function_Return (iValor * 5)                                                          
+67441>                                                                                          
+67441>End_Function
+67442>
+67442>Procedure ConvierteMayusculas String ByRef sMensaje  //El uso de ByRef modificar  el valor original del par metro
+67444>    Move (Uppercase(sMensaje)) to sMensaje
+67445>    Showln sMensaje
+67447>End_Procedure
+67448>
+67448>Procedure HacerTareaYFuncion Integer iNum String sMensaje                                 
+67450>    Get Multiplicar iNum to iNum
+67451>    
+67451>    Send ConvierteMayusculas (&sMensaje) //Recordar el uso de ByRef, se env¡a utilizando & al principio de la variable a modificar
+67452>                                                                                          
+67452>    Send Info_Box (SFormat("Realizando el Procedimiento: %1, %2", iNum, sMensaje)) "Hola" 
+67453>                                                                                          
+67453>End_Procedure                                                                             
+67454>                                                                                          
+67454>Send HacerTareaYFuncion 4 "El Mensaje"                                                    
+67455>Send HacerTareaYFuncion 17 "El otro mensaje"
+67456>
+67456>
+67456>
+67456>
+67456>
+67456>
+67456>
+67456>
+67456>
+67456>
+67456>
+67456>
+67456>
+67456>
+67456>
+67456>
+67456>
+67456>
+67456>
+67456>                                            
+67456>
+Summary
+Memory Available: 1864712191
+Total Warnings : 0
+Total Errors   : 0
+Total Symbols  : 39665
+Total Resources: 0
+Total Commands : 67455
+Total Windows  : 0
+Total Pages    : 0
+Static Data    : 371573
+Message area   : 476685
+Total Blocks   : 24304

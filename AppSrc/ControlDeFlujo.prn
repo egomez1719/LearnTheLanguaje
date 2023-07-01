@@ -1,0 +1,138 @@
+Compiling Program: C:\DataFlex Projects\LearnTheLanguage\AppSrc\ControlDeFlujo.src
+Memory Available: 1309339647
+1>Use DfAllEnt.pkg
+Using pre-compiled package DFALLENT.PKG
+Including file: dfallent.pkd    (C:\Program Files (x86)\DataFlex 19.1\Pkg\dfallent.pkd)
+67438>
+67438>//-------------------------------------------------EJEMPLO USO DEL IF ----------------------------------
+67438>
+67438>Procedure UsandoIf
+67440>    String sMensaje
+67440>    
+67440>    If (DateGetHour(CurrentDateTime()) < 12) Begin
+67442>        Move "Buenos D¡as" to sMensaje
+67443>    End
+67443>    Else If (DateGetHour(CurrentDateTime()) < 18) Begin
+67446>        Move "Buenas Tardes" to sMensaje
+67447>    End
+67447>    Else Begin 
+67448>        Move "Buenas Noches" to sMensaje
+67449>    End
+67449>    
+67449>    Send Info_Box sMensaje "Ejemplo con IF"
+67450>    
+67450>End_Procedure
+67451>
+67451>//Send UsandoIf
+67451>
+67451>//-------------------------------------------------EJEMPLO USO DEL CASE --------------------------------
+67451>Procedure UsandoCase
+67453>    String sMensaje
+67453>    
+67453>    Case Begin
+67453>        Case (DateGetHour(CurrentDateTime()) < 12)
+67455>            Move "Buenos D¡as" to sMensaje
+67456>            Case Break 
+67457>        Case (DateGetHour(CurrentDateTime()) < 18)
+67460>            Move "Buenas Tardes" to sMensaje
+67461>            Case Break 
+67462>        Case Else
+67462>            Move "Buenas Noches" to sMensaje
+67463>    Case End
+67463>    
+67463>    Send Info_Box sMensaje "Ejemplo con CASE"
+67464>    
+67464>End_Procedure
+67465>
+67465>//Send UsandoCase
+67465>
+67465>//-------------------------------------------------EJEMPLO USO DEL FOR --------------------------------
+67465>
+67465>Procedure UsandoFor
+67467>    Integer iNumero
+67467>    
+67467>    For iNumero from 0 to 9
+67473>        Showln 'Contador del FOR: ' iNumero
+67476>    Loop
+67477>
+67477>    Send Info_Box "Conteo terminado con FOR" "Informaci¢n"    
+67478>    
+67478>End_Procedure
+67479>
+67479>//Send UsandoFor
+67479>
+67479>//-------------------------------------------------EJEMPLO USO DEL WHILE ------------------------------
+67479>
+67479>Procedure UsandoWhile
+67481>    Integer iNumero
+67481>    
+67481>    Move 0 to iNumero
+67482>    
+67482>    While (iNumero < 10)
+67486>        Showln 'Contador del WHILE: ' iNumero
+67489>        Move (iNumero+1) to iNumero
+67490>    Loop
+67491>    
+67491>    Send Info_Box "Conteo terminado con WHILE" "Informaci¢n"    
+67492>    
+67492>End_Procedure
+67493>
+67493>//Send UsandoWhile
+67493>
+67493>//---------------------------------------------EJEMPLO USO DEL REPEAT UNTIL ---------------------------
+67493>
+67493>Procedure UsandoRepeatUntil
+67495>    Integer iNumero
+67495>    
+67495>    Move 0 to iNumero
+67496>    
+67496>    Repeat
+67496>        Showln 'Contador del REPEAT-UNTIL: ' iNumero
+67499>        Move (iNumero+1) to iNumero        
+67500>    Until (iNumero = 10)
+67502>
+67502>    Send Info_Box "Conteo terminado con REPEAT-UNTIL" "Informaci¢n"    
+67503>    
+67503>End_Procedure
+67504>
+67504>//Send UsandoRepeatUntil
+67504>
+67504>//--------------------------------------------- CONJETURA DE COLLATZ ---------------------------------
+67504>//La conjetura de Collatz indica que dado un n£mero entero, positivo y diferente de 1, se multiplicar 
+67504>//por 3 y se le sumar  1 si es IMPAR; si el n£mero es PAR se dividir  entre 2.
+67504>//La conjetura indica que cualquier n£mero que cumpla con las condiciones anteriores, irremediablemente
+67504>//llegar  a la terminaci¢n 4,2,1 y caer  en un ciclo infinito....
+67504>
+67504>Procedure Collatz
+67506>    Integer iNumero iContador
+67506>    
+67506>    Move 107 to iNumero
+67507>    Move 1 to iContador
+67508>    
+67508>    While (iNumero ne 1)
+67512>        If (Mod(iNumero,2) eq 0) Begin
+67514>            Move (iNumero/2) to iNumero
+67515>        End
+67515>        Else Move (iNumero*3+1) to iNumero
+67517>        Showln (String(iContador)+' - '+ String(iNumero))
+67519>        Move (iContador + 1) to iContador
+67520>    Loop
+67521>    
+67521>    Send Info_Box ("Conteo terminado con "+String(iContador-1)+" iteraciones") "Conjetura de Collatz"
+67522>    
+67522>End_Procedure
+67523>
+67523>Send Collatz
+67524>
+Summary
+Memory Available: 1298903039
+Total Warnings : 0
+Total Errors   : 0
+Total Symbols  : 39700
+Total Resources: 0
+Total Commands : 67523
+Total Windows  : 0
+Total Pages    : 0
+Static Data    : 372326
+Message area   : 476756
+Total Blocks   : 24325

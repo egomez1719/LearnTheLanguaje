@@ -1,0 +1,71 @@
+Use DfAllEnt.pkg
+// Ejemplo de un Procedimiento ------------------------------------------------------------------------------
+//Procedure HacerTarea Integer iNum String sMensaje
+//    Send Info_Box (SFormat("Realizando el Procedimiento: %1, %2", iNum, sMensaje)) "Hola"
+//End_Procedure
+//
+//Send HacerTarea 4 "El Mensaje"
+//Send HacerTarea 17 "El otro mensaje"
+
+//// Ejemplo para multiplicar un n£mero por cinco enviandolo a un Procedimiento y luego a una Funci¢n-----------
+//
+//Function Multiplicar Integer iValor Returns Integer
+//    
+//    Function_Return (iValor * 5)
+//    
+//End_Function
+//
+//Procedure HacerTareaYFuncion Integer iNum String sMensaje
+//    Get Multiplicar iNum to iNum
+//    
+//    Send Info_Box (SFormat("Realizando el Procedimiento: %1, %2", iNum, sMensaje)) "Hola"
+//
+//End_Procedure
+//
+//Send HacerTareaYFuncion 4 "El Mensaje"
+//Send HacerTareaYFuncion 17 "El otro mensaje"
+
+// Agregando otro procedimiento para convertir el mensaje a may£sculas ----------------------------------------
+
+Function Multiplicar Integer iValor Returns Integer                                       
+                                                                                          
+    Function_Return (iValor * 5)                                                          
+                                                                                          
+End_Function
+
+Procedure ConvierteMayusculas String ByRef sMensaje  //El uso de ByRef modificar  el valor original del par metro
+    Move (Uppercase(sMensaje)) to sMensaje
+    Showln sMensaje
+End_Procedure
+
+Procedure HacerTareaYFuncion Integer iNum String sMensaje                                 
+    Get Multiplicar iNum to iNum
+    
+    Send ConvierteMayusculas (&sMensaje) //Recordar el uso de ByRef, se env¡a utilizando & al principio de la variable a modificar
+                                                                                          
+    Send Info_Box (SFormat("Realizando el Procedimiento: %1, %2", iNum, sMensaje)) "Hola" 
+                                                                                          
+End_Procedure                                                                             
+                                                                                          
+Send HacerTareaYFuncion 4 "El Mensaje"                                                    
+Send HacerTareaYFuncion 17 "El otro mensaje"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                            

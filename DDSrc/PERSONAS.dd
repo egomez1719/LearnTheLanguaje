@@ -1,0 +1,73 @@
+Use Datadict.pkg
+
+Open PERSONAS
+
+Object SEXO is a DescriptionValidationTable
+    Procedure Fill_List
+        Forward Send Fill_List
+        Send Add_Table_Value "M" "Masculino"
+        Send Add_Table_Value "F" "Femenino"
+    End_Procedure
+End_Object
+
+Register_Object PERSONAS_sl
+
+Class cPERSONAS_DD is a DataDictionary
+        
+    Function fNombreCompleto Global String sClave Returns String 
+    
+        String sNCompleto
+    
+        Move '' to sNCompleto
+        
+        Clear PERSONAS
+        Move sClave to PERSONAS.CLAVE
+        Find eq PERSONAS by Index.1
+        If (Found and sClave eq PERSONAS.CLAVE) Begin
+            Append sNCompleto (Trim(PERSONAS.PRIMER_NOMBRE)) ' ' (Trim(PERSONAS.SEGUNDO_NOMBRE)) ' ' (Trim(PERSONAS.PRIMER_APELLIDO)) ' ' (Trim(PERSONAS.SEGUNDO_APELLIDO))
+            If PERSONAS.APELLIDO_CASADA ne '' Begin
+                Append sNCompleto ' de ' (Trim(PERSONAS.APELLIDO_CASADA))
+            End
+            
+        End
+    
+        Function_Return sNCompleto
+    
+    End_Function    
+    
+    Procedure Construct_Object
+        Forward Send Construct_Object
+        Set Main_File to PERSONAS.File_Number
+
+        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
+        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+
+        Set Field_Option Field PERSONAS.CLAVE DD_AUTOFIND to True
+        Set Field_Class_Name Field PERSONAS.CLAVE to "Combo"
+        Set Field_Prompt_Object Field PERSONAS.CLAVE to PERSONAS_sl
+
+        Set Field_Option Field PERSONAS.PRIMER_NOMBRE DD_CAPSLOCK to True
+
+        Set Field_Option Field PERSONAS.SEGUNDO_NOMBRE DD_CAPSLOCK to True
+
+        Set Field_Option Field PERSONAS.PRIMER_APELLIDO DD_CAPSLOCK to True
+
+        Set Field_Option Field PERSONAS.SEGUNDO_APELLIDO DD_CAPSLOCK to True
+
+        Set Field_Option Field PERSONAS.APELLIDO_CASADA DD_CAPSLOCK to True
+
+        Set Status_Help Field PERSONAS.FECHA_NACIMIENTO to "Ingrese fecha de Nacimiento (dd/mm/aa)"
+
+        Set Field_Value_Table Field PERSONAS.SEXO to SEXO
+        Set Field_Class_Name Field PERSONAS.SEXO to "Combo"
+
+    End_Procedure
+
+End_Class
+
+#IFDEF Is$WebApp
+#ELSE
+Use PERSONAS.sl
+#ENDIF

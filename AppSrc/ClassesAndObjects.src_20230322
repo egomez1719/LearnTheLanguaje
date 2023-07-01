@@ -1,0 +1,59 @@
+Use DfAllEnt.pkg
+
+Class cPerson is a cObject
+    Procedure Construct_Object
+        
+        Property String psFirstname ""
+        Property String psLastname ""
+    End_Procedure
+    
+    Function HelloMessage Returns String
+        String sFirst sLast
+        
+        Get psFirstname to sFirst
+        Get psLastname to sLast
+        
+        Function_Return (SFormat("%1 %2 says Hi!", sFirst, sLast))
+    End_Function
+    
+    Procedure SayHello
+        String sMsg
+        
+        Get HelloMessage to sMsg
+        
+        Showln sMsg
+    End_Procedure
+End_Class
+
+Class cEmployee is a cPerson
+    Procedure Construct_Object
+        Forward Send Construct_Object
+        
+        Property String psFunction ""
+    End_Procedure
+    
+    Function HelloMessage Returns String
+        String sFunction sMessage
+        
+        Forward Get HelloMessage to sMessage
+        Get psFunction to sFunction
+        Function_Return (sFunction + "," + sMessage)
+    End_Function
+End_Class
+
+Object oEdgar is a cPerson
+    Set psFirstname to "Edgar"
+    Set psLastname to "G¢mez"
+End_Object
+
+Object oHarm is a cEmployee
+    Set psFirstname to "Harm"
+    Set psLastname to "Wibier"
+    Set psFunction to "Software Engineer"
+    
+End_Object
+
+Send SayHello of oEdgar
+Send SayHello of oHarm
+
+Send Info_Box "Done..."

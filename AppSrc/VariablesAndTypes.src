@@ -1,0 +1,72 @@
+Use DfAllEnt.pkg
+
+Procedure AprenderVariables
+    String sTexto
+    
+    Move "Hola desde variable" to sTexto
+    
+    Send Info_Box sTexto "Hola"
+
+End_Procedure
+
+Send AprenderVariables //Si no se coloca esta l¡nea fuera del Procedimiento no se mostrar  nada
+
+//Showln ' ' ' Variable sTexto: ' sTexto //La variable sTexto no se reconoce fuera del Procedimiento (ERROR)
+
+//---------------------------------------------------------------------------------------------------------
+Procedure Multiplica
+    Integer iNumero1 iNumero2
+    
+    Move 5 to iNumero1
+    Move (iNumero1*7) to iNumero2 //El par‚ntesis es indispensable, su omisi¢n genera error
+    
+    Send Info_Box iNumero2 "Resultado de iNumero1 * iNumero2"
+       
+End_Procedure
+
+Send Multiplica
+
+//---------------------------------------------------------------------------------------------------------
+
+Procedure FechaDeHoy
+    Date dHoy
+    String sMensaje
+    
+    Move (CurrentDateTime()) to dHoy
+    Move ("Hoy es: " + String(dHoy)) to sMensaje
+    
+    Send Info_Box sMensaje "Informaci¢n"
+    
+End_Procedure
+
+Send FechaDeHoy
+
+//---------------------------------------------------------------------------------------------------------
+
+Procedure MostrarDecimales //variables se deben declarar de tipo Number
+    Number nNumero
+    
+    Move 177 to nNumero
+    
+    Send Info_Box ("177 / 2 es "+String(nNumero / 2)) "Con Decimales"
+    
+End_Procedure
+
+Send MostrarDecimales
+
+//---------------------------------------------------------------------------------------------------------
+
+Procedure ParImpar
+    Number iNumero
+    
+    Move 177 to iNumero
+    If ((Mod(iNumero,2)) = 0) Begin
+        Send Info_Box ("El n£mero "+String(iNumero)+" es PAR") "Atenci¢n"
+    End
+    Else Begin
+        Send Info_Box ("El n£mero "+String(iNumero)+" es IMPAR") "Atenci¢n"
+    End
+    
+End_Procedure
+
+Send ParImpar

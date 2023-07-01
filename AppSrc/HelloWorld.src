@@ -1,0 +1,3 @@
+Use DfAllEnt.pkg
+
+Send Info_Box "Hello World" "DataFlex Basic Project"

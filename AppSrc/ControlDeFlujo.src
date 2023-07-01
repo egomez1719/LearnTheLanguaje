@@ -1,0 +1,121 @@
+Use DfAllEnt.pkg
+
+//-------------------------------------------------EJEMPLO USO DEL IF ----------------------------------
+
+Procedure UsandoIf
+    String sMensaje
+    
+    If (DateGetHour(CurrentDateTime()) < 12) Begin
+        Move "Buenos D¡as" to sMensaje
+    End
+    Else If (DateGetHour(CurrentDateTime()) < 18) Begin
+        Move "Buenas Tardes" to sMensaje
+    End
+    Else Begin 
+        Move "Buenas Noches" to sMensaje
+    End
+    
+    Send Info_Box sMensaje "Ejemplo con IF"
+    
+End_Procedure
+
+//Send UsandoIf
+
+//-------------------------------------------------EJEMPLO USO DEL CASE --------------------------------
+Procedure UsandoCase
+    String sMensaje
+    
+    Case Begin
+        Case (DateGetHour(CurrentDateTime()) < 12)
+            Move "Buenos D¡as" to sMensaje
+            Case Break 
+        Case (DateGetHour(CurrentDateTime()) < 18)
+            Move "Buenas Tardes" to sMensaje
+            Case Break 
+        Case Else
+            Move "Buenas Noches" to sMensaje
+    Case End
+    
+    Send Info_Box sMensaje "Ejemplo con CASE"
+    
+End_Procedure
+
+//Send UsandoCase
+
+//-------------------------------------------------EJEMPLO USO DEL FOR --------------------------------
+
+Procedure UsandoFor
+    Integer iNumero
+    
+    For iNumero from 0 to 9
+        Showln 'Contador del FOR: ' iNumero
+    Loop
+
+    Send Info_Box "Conteo terminado con FOR" "Informaci¢n"    
+    
+End_Procedure
+
+//Send UsandoFor
+
+//-------------------------------------------------EJEMPLO USO DEL WHILE ------------------------------
+
+Procedure UsandoWhile
+    Integer iNumero
+    
+    Move 0 to iNumero
+    
+    While (iNumero < 10)
+        Showln 'Contador del WHILE: ' iNumero
+        Move (iNumero+1) to iNumero
+    Loop
+    
+    Send Info_Box "Conteo terminado con WHILE" "Informaci¢n"    
+    
+End_Procedure
+
+//Send UsandoWhile
+
+//---------------------------------------------EJEMPLO USO DEL REPEAT UNTIL ---------------------------
+
+Procedure UsandoRepeatUntil
+    Integer iNumero
+    
+    Move 0 to iNumero
+    
+    Repeat
+        Showln 'Contador del REPEAT-UNTIL: ' iNumero
+        Move (iNumero+1) to iNumero        
+    Until (iNumero = 10)
+
+    Send Info_Box "Conteo terminado con REPEAT-UNTIL" "Informaci¢n"    
+    
+End_Procedure
+
+//Send UsandoRepeatUntil
+
+//--------------------------------------------- CONJETURA DE COLLATZ ---------------------------------
+//La conjetura de Collatz indica que dado un n£mero entero, positivo y diferente de 1, se multiplicar 
+//por 3 y se le sumar  1 si es IMPAR; si el n£mero es PAR se dividir  entre 2.
+//La conjetura indica que cualquier n£mero que cumpla con las condiciones anteriores, irremediablemente
+//llegar  a la terminaci¢n 4,2,1 y caer  en un ciclo infinito....
+
+Procedure Collatz
+    Integer iNumero iContador
+    
+    Move 107 to iNumero
+    Move 1 to iContador
+    
+    While (iNumero ne 1)
+        If (Mod(iNumero,2) eq 0) Begin
+            Move (iNumero/2) to iNumero
+        End
+        Else Move (iNumero*3+1) to iNumero
+        Showln (String(iContador)+' - '+ String(iNumero))
+        Move (iContador + 1) to iContador
+    Loop
+    
+    Send Info_Box ("Conteo terminado con "+String(iContador-1)+" iteraciones") "Conjetura de Collatz"
+    
+End_Procedure
+
+Send Collatz

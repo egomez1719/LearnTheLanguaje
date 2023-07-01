@@ -1,0 +1,76 @@
+Compiling Program: C:\DataFlex Projects\LearnTheLanguage\AppSrc\ClassesAndObjects.src
+Memory Available: 1429184511
+1>Use DfAllEnt.pkg
+Using pre-compiled package DFALLENT.PKG
+Including file: dfallent.pkd    (C:\Program Files (x86)\DataFlex 19.1\Pkg\dfallent.pkd)
+67438>
+67438>Class cPersona is a cObject
+67439>    Procedure Construct_Object
+67441>        
+67441>        Property String psPrimerNombre ""
+67442>        Property String psPrimerApellido ""
+67443>    End_Procedure
+67444>    
+67444>    Function MensajeHola Returns String
+67446>        String sNombre sApellido
+67446>        
+67446>        Get psPrimerNombre to sNombre
+67447>        Get psPrimerApellido to sApellido
+67448>        
+67448>        Function_Return (SFormat("%1 %2 dice Hola!", sNombre, sApellido))
+67449>    End_Function
+67450>    
+67450>    Procedure DiHola
+67452>        String sMsg
+67452>        
+67452>        Get MensajeHola to sMsg
+67453>        
+67453>        Showln sMsg
+67455>    End_Procedure
+67456>End_Class
+67457>
+67457>Class cEmpleado is a cPersona
+67458>    Procedure Construct_Object
+67460>        Forward Send Construct_Object
+67462>        
+67462>        Property String psFuncion ""
+67463>    End_Procedure
+67464>    
+67464>    Function MensajeHola Returns String
+67466>        String sFuncion sMensaje
+67466>        
+67466>        Forward Get MensajeHola to sMensaje
+67468>        Get psFuncion to sFuncion
+67469>        Function_Return (sFuncion + ", " + sMensaje)
+67470>    End_Function
+67471>End_Class
+67472>
+67472>Object oEdgar is a cPersona
+67474>    Set psPrimerNombre to "Edgar"
+67475>    Set psPrimerApellido to "G¢mez"
+67476>End_Object
+67477>
+67477>Object oHarm is a cEmpleado
+67479>    Set psPrimerNombre to "Harm"
+67480>    Set psPrimerApellido to "Wibier"
+67481>    Set psFuncion to "Ingeniero de Software"
+67482>    
+67482>End_Object
+67483>
+67483>Send DiHola of oEdgar
+67484>Send DiHola of oHarm
+67485>
+67485>Send Info_Box "Listo..." "Informaci¢n"
+67486>
+Summary
+Memory Available: 1410555903
+Total Warnings : 0
+Total Errors   : 0
+Total Symbols  : 39682
+Total Resources: 0
+Total Commands : 67485
+Total Windows  : 0
+Total Pages    : 0
+Static Data    : 371685
+Message area   : 477005
+Total Blocks   : 24315

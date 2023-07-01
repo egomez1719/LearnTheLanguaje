@@ -1,0 +1,59 @@
+Use DfAllEnt.pkg
+
+Class cPersona is a cObject
+    Procedure Construct_Object
+        
+        Property String psPrimerNombre ""
+        Property String psPrimerApellido ""
+    End_Procedure
+    
+    Function MensajeHola Returns String
+        String sNombre sApellido
+        
+        Get psPrimerNombre to sNombre
+        Get psPrimerApellido to sApellido
+        
+        Function_Return (SFormat("%1 %2 dice Hola!", sNombre, sApellido))
+    End_Function
+    
+    Procedure DiHola
+        String sMsg
+        
+        Get MensajeHola to sMsg
+        
+        Showln sMsg
+    End_Procedure
+End_Class
+
+Class cEmpleado is a cPersona
+    Procedure Construct_Object
+        Forward Send Construct_Object
+        
+        Property String psFuncion ""
+    End_Procedure
+    
+    Function MensajeHola Returns String
+        String sFuncion sMensaje
+        
+        Forward Get MensajeHola to sMensaje
+        Get psFuncion to sFuncion
+        Function_Return (sFuncion + ", " + sMensaje)
+    End_Function
+End_Class
+
+Object oEdgar is a cPersona
+    Set psPrimerNombre to "Edgar"
+    Set psPrimerApellido to "G¢mez"
+End_Object
+
+Object oHarm is a cEmpleado
+    Set psPrimerNombre to "Harm"
+    Set psPrimerApellido to "Wibier"
+    Set psFuncion to "Ingeniero de Software"
+    
+End_Object
+
+Send DiHola of oEdgar
+Send DiHola of oHarm
+
+Send Info_Box "Listo..." "Informaci¢n"

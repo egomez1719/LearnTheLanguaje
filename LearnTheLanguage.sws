@@ -1,0 +1,15 @@
+[Properties]
+Version=19.1
+[WorkspacePaths]
+ConfigFile=.\Programs\Config.ws
+[Preferences]
+DefaultFormHeight=12
+[Conditionals]
+Is$WebApp=False
+[Projects]
+Project0=HelloWorld.src
+Project1=VariablesAndTypes.src
+Project2=ControlDeFlujo.src
+Project3=FunctionsAndProcedures.src
+Project4=ClassesAndObjects.src
+Project5=OtrasPruebas.src

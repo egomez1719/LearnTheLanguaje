@@ -1,0 +1,39 @@
+-----------------------------------------------------------------------------
+  DATE: 22/06/2023      TIME: 08:22                                  PAGE:  1
+  FILE DEFINITION FOR FILE: PERSONAS (# 1)
+-----------------------------------------------------------------------------
+  DRIVER NAME               : DATAFLEX
+  FILE ROOT NAME            : PERSONAS
+  USER DISPLAY NAME         : PERSONAS
+  DATAFLEX FILE NAME        : PERSONAS
+-----------------------------------------------------------------------------
+  RECORD LENGTH             : 128       ( USED: 114 )
+  MAX NUMBER OF RECORDS     : 10000     ( USED: 6 )
+  FILE COMPRESSION          : NONE
+  RE-USE DELETED SPACE      : YES
+  LOCKING TYPE              : FILE
+  HEADER INTEGRITY CHECKING : YES
+  TRANSACTION TYPE          : CLIENT ATOMIC
+  RECORD IDENTITY INDEX     : 0 ( 0 , 0 )
+  FILE LOGIN PARAMETER      : 
+  SYSTEM FILE               : NO 
+-----------------------------------------------------------------------------
+
+NUM  FIELD NAME       TYPE SIZE  OFFST IX   RELATES TO FILE.FIELD
+---  ---------------  ---- ----- ----- --   ---------------------------------
+  1  CLAVE            ASC     10     1  1   
+  2  PRIMER_NOMBRE    ASC     20    11      
+  3  SEGUNDO_NOMBRE   ASC     20    31      
+  4  PRIMER_APELLIDO  ASC     20    51      
+  5  SEGUNDO_APELLIDO  ASC     20    71      
+  6  APELLIDO_CASADA  ASC     20    91      
+  7  FECHA_NACIMIENTO  DAT      6   111      
+  8  SEXO             ASC      1   114      
+
+
+INDEX# FIELDS          DES U/C    LENGTH LEVELS SEGMENTS MODE
+------ --------------- --- ---    ------ ------ -------- -------
+  1    CLAVE           NO  NO       10     3       1     ON-LINE
+
+  2    Recnum          NO  NO       3      2       1     ON-LINE
+
