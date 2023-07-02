@@ -18,15 +18,6 @@ Right=1028
 TabIndex=0
 TabGroup=0
 [Window1]
-Filename=C:\DataFlex Projects\LearnTheLanguage\AppSrc\OtrasPruebas.src
-ViewType=2
-Top=21
-Left=0
-Bottom=396
-Right=1028
-TabIndex=3
-TabGroup=0
-[Window2]
 Filename=C:\DataFlex Projects\LearnTheLanguage\DDSrc\PERSONAS.dd
 ViewType=1
 Top=21
@@ -36,6 +27,15 @@ Right=1028
 CursorLine=0
 CursorColumn=0
 TabIndex=2
+TabGroup=0
+[Window2]
+Filename=C:\DataFlex Projects\LearnTheLanguage\AppSrc\OtrasPruebas.src
+ViewType=2
+Top=21
+Left=0
+Bottom=396
+Right=1028
+TabIndex=3
 TabGroup=0
 [Window3]
 Filename=C:\DataFlex Projects\LearnTheLanguage\AppSrc\PERSONAS.vw
