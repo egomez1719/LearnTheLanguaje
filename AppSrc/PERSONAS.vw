@@ -176,7 +176,8 @@ Object oPERSONAS is a dbView
 //                SaveRecord PERSONAS
 //                Unlock
 //            End  
-//Comentario para Rama-para-nuevos-cambios       
+//Comentario para Rama-para-nuevos-cambios
+//Otro comentario       
         End_Procedure
     
     End_Object
