@@ -1,5 +1,5 @@
 Compiling Program: C:\DataFlex Projects\LearnTheLanguage\AppSrc\HelloWorld.src
-Memory Available: 1253597183
+Memory Available: 2147483646
 1>Use DfAllEnt.pkg
 Using pre-compiled package DFALLENT.PKG
 Including file: dfallent.pkd    (C:\Program Files (x86)\DataFlex 19.1\Pkg\dfallent.pkd)
@@ -7,7 +7,7 @@ Including file: dfallent.pkd    (C:\Program Files (x86)\DataFlex 19.1\Pkg\dfalle
 67438>Send Info_Box "Hello World" "DataFlex Basic Project"
 67439>
 Summary
-Memory Available: 1239453695
+Memory Available: 2147483646
 Total Warnings : 0
 Total Errors   : 0
 Total Symbols  : 39656
