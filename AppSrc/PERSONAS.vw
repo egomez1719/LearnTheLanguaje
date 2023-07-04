@@ -175,7 +175,8 @@ Object oPERSONAS is a dbView
 //                Move sClave to PERSONAS.CLAVE
 //                SaveRecord PERSONAS
 //                Unlock
-//            End         
+//            End  
+//Comentario para Rama-para-nuevos-cambios       
         End_Procedure
     
     End_Object
