@@ -164,7 +164,12 @@ Object oPERSONAS is a dbView
     
         // fires when the button is clicked
         Procedure OnClick
-//            Find ge PERSONAS by 1
+//            String sClave
+//            
+//            Clear PERSONAS
+//            Move oPERSONAS_CLAVE to sClave
+//            
+//            Find ge PERSONAS by Index.1
 //            If (Found) Begin
 //                Reread PERSONAS
 //                Move sClave to PERSONAS.CLAVE

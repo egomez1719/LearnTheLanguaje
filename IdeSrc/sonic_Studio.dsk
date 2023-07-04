@@ -7,44 +7,35 @@ GroupCount=1
 HorizontalGroups=1
 [TabGroup0]
 GroupSize=40
-SelectedTab=1
+SelectedTab=2
 [Window0]
 Filename=Workspace Dashboard
 ViewType=101
 Top=21
 Left=0
 Bottom=396
-Right=1028
+Right=893
 TabIndex=0
 TabGroup=0
 [Window1]
-Filename=C:\DataFlex Projects\LearnTheLanguage\AppSrc\OtrasPruebas.src
-ViewType=2
-Top=21
-Left=0
-Bottom=396
-Right=1028
-TabIndex=3
-TabGroup=0
-[Window2]
 Filename=C:\DataFlex Projects\LearnTheLanguage\DDSrc\PERSONAS.dd
 ViewType=1
 Top=21
 Left=0
 Bottom=396
-Right=1028
+Right=893
 CursorLine=0
 CursorColumn=0
-TabIndex=2
+TabIndex=1
 TabGroup=0
-[Window3]
+[Window2]
 Filename=C:\DataFlex Projects\LearnTheLanguage\AppSrc\PERSONAS.vw
 ViewType=1
 Top=21
 Left=0
 Bottom=396
-Right=1028
-CursorLine=188
-CursorColumn=0
-TabIndex=1
+Right=893
+CursorLine=177
+CursorColumn=2
+TabIndex=2
 TabGroup=0

@@ -1,5 +1,5 @@
 Compiling Program: C:\DataFlex Projects\LearnTheLanguage\AppSrc\OtrasPruebas.src
-Memory Available: 945631231
+Memory Available: 2147483646
 1>Use DFAllEnt.pkg
 Using pre-compiled package DFALLENT.PKG
 Including file: dfallent.pkd    (C:\Program Files (x86)\DataFlex 19.1\Pkg\dfallent.pkd)
@@ -4585,57 +4585,59 @@ Including file: cWinControl.pkg    (C:\Program Files (x86)\DataFlex 19.1\Pkg\cWi
 70489>>>    
 70489>>>        // fires when the button is clicked
 70489>>>        Procedure OnClick
-70492>>>            Find ge PERSONAS by 1
-70493>>>>
-70493>>>            If (Found) Begin
-70495>>>                Reread PERSONAS
-70499>>>                Move sClave to PERSONAS.CLAVE
-70500>>>                SaveRecord PERSONAS
-70501>>>                Unlock
-70502>>>>
-70502>>>            End
-70502>>>>
-70502>>>            
-70502>>>            
-70502>>>        End_Procedure
-70503>>>    
-70503>>>    End_Object
-70504>>>    Object oBoton_Borrar is a Button
-70506>>>        Set Location to 85 288
-70507>>>        Set Label to "Borrar"
-70508>>>        Set psImage to "ActionDelete.ico"
-70509>>>        
-70509>>>        // fires when the button is clicked
-70509>>>        Procedure OnClick
-70512>>>            
-70512>>>            
-70512>>>        End_Procedure
-70513>>>    
-70513>>>    End_Object
-70514>>>    
-70514>>>
-70514>>>Cd_End_Object
-70516>>>>
-70516>
-70516>        Procedure Activate_About
-70519>            Send DoAbout "" "" "" "" ""
-70520>        End_Procedure
-70521>
-70521>    End_Object
-70522>
-70522>End_Object
+70492>>>            //String sClave
+70492>>>            
+70492>>>            Clear PERSONAS
+70493>>>            Move oPERSONAS_CLAVE to sClave
+70494>>>            
+70494>>>            Find ge PERSONAS by Index.1
+70495>>>>
+70495>>>            If (Found) Begin
+70497>>>                Reread PERSONAS
+70501>>>                Move sClave to PERSONAS.CLAVE
+70502>>>                SaveRecord PERSONAS
+70503>>>                Unlock
+70504>>>>
+70504>>>            End         
+70504>>>>
+70504>>>        End_Procedure
+70505>>>    
+70505>>>    End_Object
+70506>>>    Object oBoton_Borrar is a Button
+70508>>>        Set Location to 85 288
+70509>>>        Set Label to "Borrar"
+70510>>>        Set psImage to "ActionDelete.ico"
+70511>>>        
+70511>>>        // fires when the button is clicked
+70511>>>        Procedure OnClick
+70514>>>            
+70514>>>            
+70514>>>        End_Procedure
+70515>>>    
+70515>>>    End_Object
+70516>>>
+70516>>>Cd_End_Object
+70518>>>>
+70518>
+70518>        Procedure Activate_About
+70521>            Send DoAbout "" "" "" "" ""
+70522>        End_Procedure
 70523>
-70523>Start_UI
+70523>    End_Object
 70524>
+70524>End_Object
+70525>
+70525>Start_UI
+70526>
 Summary
-Memory Available: 921616383
+Memory Available: 2147483646
 Total Warnings : 0
 Total Errors   : 0
 Total Symbols  : 41206
 Total Resources: 0
-Total Commands : 70523
+Total Commands : 70525
 Total Windows  : 0
 Total Pages    : 0
-Static Data    : 401194
+Static Data    : 401218
 Message area   : 501882
 Total Blocks   : 25472
