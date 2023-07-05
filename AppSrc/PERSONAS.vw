@@ -161,6 +161,7 @@ Object oPERSONAS is a dbView
         Set Location to 85 233
         Set Label to "Grabar"
         Set psImage to "ActionSave.ico"
+        Set Enabled_State to False
     
         // fires when the button is clicked
         Procedure OnClick
@@ -185,6 +186,7 @@ Object oPERSONAS is a dbView
         Set Location to 85 288
         Set Label to "Borrar"
         Set psImage to "ActionDelete.ico"
+        Set Enabled_State to False
         
         // fires when the button is clicked
         Procedure OnClick

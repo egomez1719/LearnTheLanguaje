@@ -1,4 +1,4 @@
-Compiling Program: C:\DataFlex Projects\LearnTheLanguage\AppSrc\OtrasPruebas.src
+Compiling Program: C:\PRUEBAS_GITHUB\LearnTheLanguaje\AppSrc\OtrasPruebas.src
 Memory Available: 2147483646
 1>Use DFAllEnt.pkg
 Using pre-compiled package DFALLENT.PKG
@@ -1285,7 +1285,7 @@ Including file: CryptographerConstants.pkg    (C:\Program Files (x86)\DataFlex 1
 68131>>>    //
 68131>>>    // Set psEncryptPassword to "JchUAo7W@r.b{<Yk~OONi0nq=sMi[*Rn[A-`Vo)q"
 68131>>>    //  
-Including file: LoginEncryptionKey.inc    (C:\DataFlex Projects\LearnTheLanguage\AppSrc\LoginEncryptionKey.inc)
+Including file: LoginEncryptionKey.inc    (C:\PRUEBAS_GITHUB\LearnTheLanguaje\AppSrc\LoginEncryptionKey.inc)
 68131>>>>// Studio generated login encryption key
 68131>>>>Set psEncryptPassword to "#38#>1Q#fF:`[e*w38.u7bM%phQAUZMi-J[MbQI)"
 68132>>>>
@@ -3238,15 +3238,15 @@ Including file: MSSqldrv.pkg    (C:\Program Files (x86)\DataFlex 19.1\Pkg\MSSqld
 69482>>>End_Procedure
 69483>>>
 69483>        Use PERSONAS.vw
-Including file: PERSONAS.vw    (C:\DataFlex Projects\LearnTheLanguage\AppSrc\PERSONAS.vw)
+Including file: PERSONAS.vw    (C:\PRUEBAS_GITHUB\LearnTheLanguaje\AppSrc\PERSONAS.vw)
 69483>>>Use Windows.pkg
 69483>>>Use DFClient.pkg
 69483>>>Use PERSONAS.dd
-Including file: PERSONAS.dd    (C:\DataFlex Projects\LearnTheLanguage\DDSrc\PERSONAS.dd)
+Including file: PERSONAS.dd    (C:\PRUEBAS_GITHUB\LearnTheLanguaje\DDSrc\PERSONAS.dd)
 69483>>>>>Use Datadict.pkg
 69483>>>>>
 69483>>>>>Open PERSONAS
-Including file: PERSONAS.fd    (C:\DataFlex Projects\LearnTheLanguage\DDSrc\PERSONAS.fd)
+Including file: PERSONAS.fd    (C:\PRUEBAS_GITHUB\LearnTheLanguaje\DDSrc\PERSONAS.fd)
 69485>>>>>
 69485>>>>>Object SEXO is a DescriptionValidationTable
 69487>>>>>    Procedure Fill_List
@@ -3317,7 +3317,7 @@ Including file: PERSONAS.fd    (C:\DataFlex Projects\LearnTheLanguage\DDSrc\PERS
 69539>>>>>End_Class
 69540>>>>>
 69540>>>>>Use PERSONAS.sl
-Including file: PERSONAS.sl    (C:\DataFlex Projects\LearnTheLanguage\AppSrc\PERSONAS.sl)
+Including file: PERSONAS.sl    (C:\PRUEBAS_GITHUB\LearnTheLanguaje\AppSrc\PERSONAS.sl)
 69540>>>>>>>// PERSONAS.sl
 69540>>>>>>>// PERSONAS Lookup List
 69540>>>>>>>
@@ -4582,62 +4582,63 @@ Including file: cWinControl.pkg    (C:\Program Files (x86)\DataFlex 19.1\Pkg\cWi
 70486>>>        Set Location to 85 233
 70487>>>        Set Label to "Grabar"
 70488>>>        Set psImage to "ActionSave.ico"
-70489>>>    
-70489>>>        // fires when the button is clicked
-70489>>>        Procedure OnClick
-70492>>>            //String sClave
-70492>>>            
-70492>>>            Clear PERSONAS
-70493>>>            Move oPERSONAS_CLAVE to sClave
-70494>>>            
-70494>>>            Find ge PERSONAS by Index.1
-70495>>>>
-70495>>>            If (Found) Begin
-70497>>>                Reread PERSONAS
-70501>>>                Move sClave to PERSONAS.CLAVE
-70502>>>                SaveRecord PERSONAS
-70503>>>                Unlock
-70504>>>>
-70504>>>            End         
-70504>>>>
+70489>>>        Set Enabled_State to False
+70490>>>    
+70490>>>        // fires when the button is clicked
+70490>>>        Procedure OnClick
+70493>>>//            String sClave
+70493>>>//            
+70493>>>//            Clear PERSONAS
+70493>>>//            Move oPERSONAS_CLAVE to sClave
+70493>>>//            
+70493>>>//            Find ge PERSONAS by Index.1
+70493>>>//            If (Found) Begin
+70493>>>//                Reread PERSONAS
+70493>>>//                Move sClave to PERSONAS.CLAVE
+70493>>>//                SaveRecord PERSONAS
+70493>>>//                Unlock
+70493>>>//            End  
+70493>>>//Comentario para Rama-para-nuevos-cambios
+70493>>>//Otro comentario       
+70493>>>        End_Procedure
+70494>>>    
+70494>>>    End_Object
+70495>>>    Object oBoton_Borrar is a Button
+70497>>>        Set Location to 85 288
+70498>>>        Set Label to "Borrar"
+70499>>>        Set psImage to "ActionDelete.ico"
+70500>>>        Set Enabled_State to False
+70501>>>        
+70501>>>        // fires when the button is clicked
+70501>>>        Procedure OnClick
+70504>>>            
+70504>>>            
 70504>>>        End_Procedure
 70505>>>    
 70505>>>    End_Object
-70506>>>    Object oBoton_Borrar is a Button
-70508>>>        Set Location to 85 288
-70509>>>        Set Label to "Borrar"
-70510>>>        Set psImage to "ActionDelete.ico"
-70511>>>        
-70511>>>        // fires when the button is clicked
-70511>>>        Procedure OnClick
-70514>>>            
-70514>>>            
-70514>>>        End_Procedure
-70515>>>    
-70515>>>    End_Object
-70516>>>
-70516>>>Cd_End_Object
-70518>>>>
-70518>
-70518>        Procedure Activate_About
-70521>            Send DoAbout "" "" "" "" ""
-70522>        End_Procedure
-70523>
-70523>    End_Object
-70524>
-70524>End_Object
-70525>
-70525>Start_UI
-70526>
+70506>>>
+70506>>>Cd_End_Object
+70508>>>>
+70508>
+70508>        Procedure Activate_About
+70511>            Send DoAbout "" "" "" "" ""
+70512>        End_Procedure
+70513>
+70513>    End_Object
+70514>
+70514>End_Object
+70515>
+70515>Start_UI
+70516>
 Summary
 Memory Available: 2147483646
 Total Warnings : 0
 Total Errors   : 0
-Total Symbols  : 41206
+Total Symbols  : 41204
 Total Resources: 0
-Total Commands : 70525
+Total Commands : 70515
 Total Windows  : 0
 Total Pages    : 0
-Static Data    : 401218
-Message area   : 501882
-Total Blocks   : 25472
+Static Data    : 401134
+Message area   : 501908
+Total Blocks   : 25470
